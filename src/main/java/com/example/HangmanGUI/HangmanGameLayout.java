@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class HangmanGameLayout {
     public static int numberOfErrors = 0;
@@ -190,6 +191,7 @@ public class HangmanGameLayout {
 
         return newScene;
     }
+
     public static void replaceAlreadyGuessedLetters(String guess) {
         // For every letter in wordToGuess we need to check if guess is equal and return this String and add it to alreadyGUessed
         // If no match add an Underscore

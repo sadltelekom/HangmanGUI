@@ -53,7 +53,7 @@ public class HangmanGameLayout {
         Button buttonY = new Button("Y");
         Button buttonZ = new Button("Z");
 
-        newHBox.getChildren().addAll(solvingWord,hangmanStatus,buttonA,buttonB,buttonC,buttonD,buttonE,buttonF);
+        newHBox.getChildren().addAll(solvingWord,hangmanStatus,buttonA,buttonB,buttonC,buttonD,buttonE,buttonF,buttonG,buttonH);
 
         panel.setLeft(solvingWord);
         panel.setRight(hangmanStatus);

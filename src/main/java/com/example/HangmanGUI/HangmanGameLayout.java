@@ -25,13 +25,7 @@ public class HangmanGameLayout {
         Label solvingWord = new Label("Test");
         solvingWord.setPadding(new Insets(100, 100, 100, 250));
 
-        Label hangmanStatus = new Label("_____\n" +
-                                          "|    \n"   +
-                                          "|    \n"   +
-                                          "|    \n"   +
-                                          "|    \n"   +
-                                          "|    \n"   +
-                                          "________");
+        Label hangmanStatus = new Label(HangmanGame.drawHangman(0));
         hangmanStatus.setPadding(new Insets(100, 250, 100, 100));
 
         Button buttonA = new Button("A");

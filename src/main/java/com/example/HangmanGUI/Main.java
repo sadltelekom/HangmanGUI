@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -23,7 +24,7 @@ public class Main extends Application {
         // Add label to box
         Label introLabel = new Label();
         introLabel.setTextAlignment(TextAlignment.CENTER);
-        introLabel.setText("Hello fellow User.\nWelcome to our (Bojan, Szymon and Sebastian) Hangman Game.\n7 tries will determine if you live or die ... \nSo choose wise.");
+        introLabel.setText("Hello dear User.\nWelcome to our (Bojan, Szymon and Sebastian) Hangman Game.\n7 tries will determine if you live or die ... \nSo choose wise.");
 
         box.setSpacing(10);
         box.setPadding(new Insets(10, 10, 10, 10));
@@ -31,7 +32,10 @@ public class Main extends Application {
         Button playGameButton = new Button();
         playGameButton.setText("Play Game!");
 
+        playGameButton.setAlignment(Pos.CENTER);
+
         Button exitGameButton = new Button("Quit Game!");
+        exitGameButton.setAlignment(Pos.CENTER);
         box.getChildren().addAll(introLabel,playGameButton,exitGameButton);
 
         // Add Event Handlers to buttons:
@@ -50,17 +54,19 @@ public class Main extends Application {
             @Override
             public void handle(ActionEvent event) {
                 primaryStage.setScene(HangmanGameLayout.drawHangmanGameScene());
+                primaryStage.setResizable(false);
                 primaryStage.show();
             }
         });
 
         // setting up a scene with that layout
-        Scene firstScene = new Scene(box,640,480);
+        Scene firstScene = new Scene(box,400,200);
         // put scene into this stage.
 
 
 
         primaryStage.setScene(firstScene);
+        primaryStage.setResizable(false);
         primaryStage.show();
 
     }

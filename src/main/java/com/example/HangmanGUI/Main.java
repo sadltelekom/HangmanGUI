@@ -43,6 +43,16 @@ public class Main extends Application {
             }
         });
 
+        // add Event Handler to Playbutton
+
+        playGameButton.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                HangmanGameLayout.drawHangmanGameScene();
+            }
+        });
+
         // setting up a scene with that layout
         Scene firstScene = new Scene(box,640,480);
         // put scene into this stage.

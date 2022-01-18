@@ -77,74 +77,27 @@ public class HangmanGame {
         return false;
     }
 
-    public static void drawHangman(int numberOfErrors) {
+    public static String drawHangman(int numberOfErrors) {
+        String Gallows ="";
         if (numberOfErrors == 0) {
-            System.out.println("_____ ");
-            System.out.println("|    ");
-            System.out.println("|    ");
-            System.out.println("|       ");
-            System.out.println("|    ");
-            System.out.println("|      ");
-            System.out.println("________");
+            Gallows = "_____ \n" + "|    \n" + "|    \n" + "|       \n" + "|    \n" + "|      \n" + "________\n";
         } else if (numberOfErrors == 1) {
-            System.out.println("_____ ");
-            System.out.println("|   |");
-            System.out.println("|    ");
-            System.out.println("|       ");
-            System.out.println("|    ");
-            System.out.println("| _/  ");
-            System.out.println("________");
+            Gallows = "_____ \n" + "|   |\n" + "|    \n" + "|       \n" + "|    \n" + "| _/  \n" + "________\n";
         } else if (numberOfErrors == 2) {
-            System.out.println("_____ ");
-            System.out.println("|   |");
-            System.out.println("|    ");
-            System.out.println("|       ");
-            System.out.println("|    ");
-            System.out.println("| _/ \\_");
-            System.out.println("________");
+            Gallows = "_____ \n" + "|   |\n" + "|    \n" + "|       \n" + "|    \n" + "| _/ \\_\n" + "________\n";
         } else if (numberOfErrors == 3) {
-            System.out.println("_____ ");
-            System.out.println("|   |");
-            System.out.println("|    ");
-            System.out.println("|       ");
-            System.out.println("|   |");
-            System.out.println("| _/ \\_");
-            System.out.println("________");
+            Gallows = "_____ \n" + "|   |\n" + "|    \n" + "|       \n" + "|   |\n" + "| _/ \\_\n" + "________\n";
         } else if (numberOfErrors == 4) {
-            System.out.println("_____ ");
-            System.out.println("|   |");
-            System.out.println("|    ");
-            System.out.println("|   | ");
-            System.out.println("|   |");
-            System.out.println("| _/ \\_");
-            System.out.println("________");
+            Gallows = "_____ \n" + "|   |\n" + "|    \n" + "|   | \n" + "|   |\n" + "| _/ \\_\n" + "________\n";
         } else if (numberOfErrors == 5) {
-            System.out.println("_____ ");
-            System.out.println("|   |");
-            System.out.println("|    ");
-            System.out.println("|  /|  ");
-            System.out.println("|   |");
-            System.out.println("| _/ \\_");
-            System.out.println("________");
+            Gallows = "_____ \n" + "|   |\n" + "|    \n" + "|  /|  \n" + "|   |\n" + "| _/ \\_\n" + "________\n";
         } else if (numberOfErrors == 6) {
-            System.out.println("_____ ");
-            System.out.println("|   |");
-            System.out.println("|    ");
-            System.out.println("|  /|\\ ");
-            System.out.println("|   |");
-            System.out.println("| _/ \\_");
-            System.out.println("________");
+            Gallows = "_____ \n" + "|   |\n" + "|    \n" + "|  /|\\ \n" + "|   |\n" + "| _/ \\_\n" + "________\n";
         } else if (numberOfErrors == 7) {
-            System.out.println("_____ ");
-            System.out.println("|   |");
-            System.out.println("|   O");
-            System.out.println("|  /|\\ ");
-            System.out.println("|   |");
-            System.out.println("| _/ \\_");
-            System.out.println("________");
-            System.out.println(" Sorry you lost");
-        }
+            Gallows = "_____ \n" + "|   |\n" + "|   O\n" + "|  /|\\ \n" + "|   |\n" + "| _/ \\_\n" + "________\n" + " Sorry you lost\n";
+        } return Gallows;
     }
+
 
     public static void replaceAlreadyGuessedLetters(String guess) {
         // For every letter in wordToGuess we need to check if guess is equal and return this String and add it to alreadyGUessed

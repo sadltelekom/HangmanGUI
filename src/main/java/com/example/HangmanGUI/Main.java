@@ -49,7 +49,8 @@ public class Main extends Application {
 
             @Override
             public void handle(ActionEvent event) {
-                HangmanGameLayout.drawHangmanGameScene();
+                primaryStage.setScene(HangmanGameLayout.drawHangmanGameScene());
+                primaryStage.show();
             }
         });
 

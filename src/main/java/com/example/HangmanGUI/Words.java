@@ -12,14 +12,14 @@ public class Words {
         return randomWord;
     }
 
-    public static void drawGuessingDashes(String searchWord) {
+    public static String drawGuessingDashes(String searchWord) {
 
         //System.out.println(searchWord);
-
+        String underscoredWord ="";
         for (int i = 0;i <= searchWord.length() - 1;i++) {
-            System.out.print("_ ");
+            underscoredWord += "_ ";
         }
-
+        return underscoredWord;
     }
 
 }

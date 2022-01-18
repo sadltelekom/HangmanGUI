@@ -1,6 +1,8 @@
 package com.example.HangmanGUI;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -10,7 +12,15 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 public class HangmanGameLayout {
+    public static int numberOfErrors = 0;
+    static String wordToGuess = Words.getRandomWord();
+    public static String alreadyGuessed;
+
     public static Scene drawHangmanGameScene() {
+        for (int i = 0; i < wordToGuess.length(); i++) {
+            alreadyGuessed = alreadyGuessed + "_";
+        }
+
         BorderPane panel = new BorderPane();
 
 
@@ -22,7 +32,7 @@ public class HangmanGameLayout {
 
 
 
-        Label solvingWord = new Label("Test");
+        Label solvingWord = new Label(Words.drawGuessingDashes(wordToGuess));
         solvingWord.setPadding(new Insets(100, 100, 100, 250));
 
         Label hangmanStatus = new Label(HangmanGame.drawHangman(0));
@@ -65,7 +75,113 @@ public class HangmanGameLayout {
 
         panel.setBottom(bottomHBox);
 
+        buttonA.setOnAction(new EventHandler<ActionEvent>() {
 
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("User Pressed A");
+
+                if (wordToGuess.toUpperCase().contains("A")) {
+                    replaceAlreadyGuessedLetters("A");
+
+                } else {
+                    System.out.printf("%s not correct try again\n", "A");
+                    numberOfErrors++;
+                }
+            }
+
+        });
+        buttonB.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("User Pressed B");
+
+                if (wordToGuess.toUpperCase().contains("B")) {
+                    replaceAlreadyGuessedLetters("B");
+
+                } else {
+                    System.out.printf("%s not correct try again\n", "B");
+                    numberOfErrors++;
+                }
+            }
+        });
+        buttonC.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("User Pressed C");
+
+                if (wordToGuess.toUpperCase().contains("C")) {
+                    replaceAlreadyGuessedLetters("C");
+
+                } else {
+                    System.out.printf("%s not correct try again\n", "C");
+                    numberOfErrors++;
+                }
+            }
+        });
+        buttonD.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("User Pressed D");
+
+                if (wordToGuess.toUpperCase().contains("D")) {
+                    replaceAlreadyGuessedLetters("D");
+
+                } else {
+                    System.out.printf("%s not correct try again\n", "D");
+                    numberOfErrors++;
+                }
+            }
+        });
+        buttonE.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("User Pressed E");
+
+                if (wordToGuess.toUpperCase().contains("E")) {
+                    replaceAlreadyGuessedLetters("E");
+
+                } else {
+                    System.out.printf("%s not correct try again\n", "E");
+                    numberOfErrors++;
+                }
+            }
+        });
+        buttonF.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("User Pressed F");
+
+                if (wordToGuess.toUpperCase().contains("F")) {
+                    replaceAlreadyGuessedLetters("F");
+
+                } else {
+                    System.out.printf("%s not correct try again\n", "F");
+                    numberOfErrors++;
+                }
+            }
+        });
+        buttonG.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("User Pressed G");
+
+                if (wordToGuess.toUpperCase().contains("G")) {
+                    replaceAlreadyGuessedLetters("G");
+
+                } else {
+                    System.out.printf("%s not correct try again\n", "G");
+                    numberOfErrors++;
+                }
+            }
+
+        });
 
         System.out.println("Play Button pressed.");
         // put scene into this stage.
@@ -74,4 +190,26 @@ public class HangmanGameLayout {
 
         return newScene;
     }
+    public static void replaceAlreadyGuessedLetters(String guess) {
+        // For every letter in wordToGuess we need to check if guess is equal and return this String and add it to alreadyGUessed
+        // If no match add an Underscore
+        // Return the made up strings nd save it to another variable: alreadyGuessed
+        // need to replace Chars instead of concatinating
+
+
+
+        for (int i = 0; i < wordToGuess.length() ; i++) {
+
+            if (wordToGuess.charAt(i) == guess.charAt(0)) {
+                //go zamenuva karakterot sto e ednakov so karaterot na userot - go replace the character that is equal with the character of the user input
+                alreadyGuessed = alreadyGuessed.substring(0,i)+ guess.charAt(0) +alreadyGuessed.substring(i+1);
+
+            } else {
+                alreadyGuessed = alreadyGuessed.substring(0,i)+alreadyGuessed.substring(i);
+            }
+        }
+
+
+    }
+
 }

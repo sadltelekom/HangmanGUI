@@ -98,7 +98,6 @@ public class HangmanGame {
         } return Gallows;
     }
 
-
     public static void replaceAlreadyGuessedLetters(String guess) {
         // For every letter in wordToGuess we need to check if guess is equal and return this String and add it to alreadyGUessed
         // If no match add an Underscore

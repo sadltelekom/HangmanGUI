@@ -17,6 +17,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
         primaryStage.setTitle("Hangman");
         // setting a vBOX Layout
         VBox box = new VBox();
@@ -52,7 +53,8 @@ public class Main extends Application {
 
             @Override
             public void handle(ActionEvent event) {
-                primaryStage.setScene(HangmanGameLayout.drawHangmanGameScene());
+                //primaryStage.setScene(HangmanGameLayout.drawHangmanGameScene());
+
                 primaryStage.setResizable(false);
                 primaryStage.show();
             }

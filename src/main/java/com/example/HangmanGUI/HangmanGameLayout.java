@@ -14,11 +14,17 @@ public class HangmanGameLayout {
         BorderPane panel = new BorderPane();
 
 
-        HBox newHBox = new HBox();
+        HBox bottomHBox = new HBox();
 
-        newHBox.setSpacing(10);
-        newHBox.setPadding(new Insets(10, 10, 10, 10));
+
+        bottomHBox.setSpacing(10);
+        bottomHBox.setPadding(new Insets(10, 10, 10, 10));
+
+
+
         Label solvingWord = new Label("Test");
+        solvingWord.setPadding(new Insets(100, 100, 100, 250));
+
         Label hangmanStatus = new Label("_____\n" +
                                           "|    \n"   +
                                           "|    \n"   +
@@ -26,6 +32,8 @@ public class HangmanGameLayout {
                                           "|    \n"   +
                                           "|    \n"   +
                                           "________");
+        hangmanStatus.setPadding(new Insets(100, 250, 100, 100));
+
         Button buttonA = new Button("A");
         Button buttonB = new Button("B");
         Button buttonC = new Button("C");
@@ -53,17 +61,21 @@ public class HangmanGameLayout {
         Button buttonY = new Button("Y");
         Button buttonZ = new Button("Z");
 
-        newHBox.getChildren().addAll(solvingWord,hangmanStatus,buttonA,buttonB,buttonC,buttonD,buttonE,buttonF,buttonG,buttonH);
+        bottomHBox.getChildren().addAll(solvingWord,hangmanStatus,buttonA,buttonB,buttonC,buttonD,buttonE,buttonF,buttonG,
+                buttonH,buttonI,buttonJ,buttonK,buttonL,buttonM,buttonN,buttonO,buttonP,buttonQ, buttonR,buttonS,buttonT
+                ,buttonU,buttonV,buttonW,buttonX,buttonY,buttonZ);
+
 
         panel.setLeft(solvingWord);
         panel.setRight(hangmanStatus);
-        panel.setBottom(newHBox);
+
+        panel.setBottom(bottomHBox);
 
 
 
         System.out.println("Play Button pressed.");
         // put scene into this stage.
-        Scene newScene = new Scene(panel,640,480);
+        Scene newScene = new Scene(panel,900,400);
 
 
         return newScene;

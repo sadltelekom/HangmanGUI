@@ -7,9 +7,14 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class HangmanGameLayout {
     public static int numberOfErrors = 0;
@@ -24,19 +29,22 @@ public class HangmanGameLayout {
             alreadyGuessed = Words.getAlreadyGuessed(wordToGuess);
             numberOfErrors = 0;
             // show winner scene
-
             BorderPane panel = new BorderPane();
-            Label win = new Label("Congrats you won !!!\n\n" +
-                    "  ___________\n" +
-                    "'._==_==_=_.'\n" +
-                    "   .-\\:      /-.\n" +
-                    "   | (|:.     |) |\n" +
-                    "   '-|:.     |-'\n" +
-                    "     \\::.    /\n" +
-                    "       '::. .'\n" +
-                    "         ) (\n" +
-                    "       _.' '._\n" +
-                    "     `\"\"\"\"\"\"\"` ");
+            Label win = new Label("Congratulations ❤!");
+            //Sourcing the image for the cup
+            FileInputStream inputstream = null;
+            try {
+                inputstream = new FileInputStream("src/main/java/com/example/HangmanGUI/Triwizard_Cup.jpg");
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            //displaying the image
+            Image img = new Image(inputstream);
+            ImageView view = new ImageView(img);
+            //fixing the size of the picture relative to the size of the program window
+            view.setFitHeight(350);
+            view.setPreserveRatio(true);
+            win.setGraphic(view);
             // close game
             Button exitGameButton = new Button("Quit Game!");
             exitGameButton.setAlignment(Pos.CENTER);
@@ -61,8 +69,22 @@ public class HangmanGameLayout {
             System.out.println("You lost");
 
             BorderPane panel = new BorderPane();
-            Label lost = new Label("Sorry you lost \n\n"
-                    + HangmanGame.drawHangman(7) +"\n" + "Word was " + wordToGuess);
+            Label lost = new Label("Try again!");
+            //Sourcing the image for the cup
+            FileInputStream inputstream = null;
+            try {
+                inputstream = new FileInputStream("src/main/java/com/example/HangmanGUI/defeat.png");
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            //displaying the image
+            Image img = new Image(inputstream);
+            ImageView view = new ImageView(img);
+            //fixing the size of the picture relative to the size of the program window
+            view.setFitHeight(150);
+            view.setPreserveRatio(true);
+            lost.setGraphic(view);
+
             // close game
             Button exitGameButton = new Button("Quit Game!");
             exitGameButton.setAlignment(Pos.CENTER);

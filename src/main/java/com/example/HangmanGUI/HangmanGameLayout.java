@@ -22,6 +22,7 @@ public class HangmanGameLayout {
             System.out.println("You won");
             wordToGuess = Words.getRandomWord();
             alreadyGuessed = Words.getAlreadyGuessed(wordToGuess);
+            numberOfErrors = 0;
             // show winner scene
 
             BorderPane panel = new BorderPane();
@@ -56,9 +57,29 @@ public class HangmanGameLayout {
         }
         if(numberOfErrors == 7) {
             System.out.println("You lost");
-            // show winner scene
+            wordToGuess = Words.getRandomWord();
+            alreadyGuessed = Words.getAlreadyGuessed(wordToGuess);
+            numberOfErrors = 0;
+            BorderPane panel = new BorderPane();
+            Label lost = new Label("Sorry you lost \n\n"
+                    + HangmanGame.drawHangman(7) +"\n" + "Word was " + wordToGuess);
             // close game
-            System.exit(0);
+            Button exitGameButton = new Button("Quit Game!");
+            exitGameButton.setAlignment(Pos.CENTER);
+            exitGameButton.setOnAction(new EventHandler<ActionEvent>() {
+
+                @Override
+                public void handle(ActionEvent event) {
+                    System.exit(0);
+                }
+            });
+
+            panel.setCenter(lost);
+            panel.setBottom(exitGameButton);
+            Scene winnerScene = new Scene(panel,400,400);
+            Stage lossStage = new Stage();
+            sceneChanger.setNewScene(lossStage,winnerScene);
+
         }
 
         gameStage = newStage;

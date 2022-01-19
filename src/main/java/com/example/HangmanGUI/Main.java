@@ -10,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
-
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -28,9 +27,10 @@ public class Main extends Application {
 
         box.setSpacing(10);
         box.setPadding(new Insets(10, 10, 10, 10));
+
         // Add Buttons to Box
         Button playGameButton = new Button();
-        playGameButton.setText("Play Game!");
+        playGameButton.setText("Play Game!");;
 
         playGameButton.setAlignment(Pos.CENTER);
 
@@ -54,6 +54,7 @@ public class Main extends Application {
             @Override
             public void handle(ActionEvent event) {
                 Stage gameStage = new Stage();
+                gameStage.setTitle("Hangman Game");
                 gameStage.setScene(HangmanGameLayout.drawHangmanGameScene(gameStage));
 
 
@@ -72,10 +73,8 @@ public class Main extends Application {
 
     }
 
-
     public static void main(String[] args) {
         launch(args);
     }
-
 
 }

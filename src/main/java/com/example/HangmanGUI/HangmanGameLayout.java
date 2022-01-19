@@ -52,6 +52,7 @@ public class HangmanGameLayout {
             panel.setBottom(exitGameButton);
             Scene winnerScene = new Scene(panel,400,400);
             Stage winStage = new Stage();
+            winStage.setTitle("Winner");
             sceneChanger.setNewScene(winStage,winnerScene);
 
         }
@@ -80,6 +81,7 @@ public class HangmanGameLayout {
             panel.setBottom(exitGameButton);
             Scene winnerScene = new Scene(panel,400,400);
             Stage lossStage = new Stage();
+            lossStage.setTitle("Looser");
             sceneChanger.setNewScene(lossStage,winnerScene);
 
         }

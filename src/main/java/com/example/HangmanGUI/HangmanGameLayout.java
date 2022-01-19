@@ -3,6 +3,7 @@ package com.example.HangmanGUI;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -22,8 +23,36 @@ public class HangmanGameLayout {
             wordToGuess = Words.getRandomWord();
             alreadyGuessed = Words.getAlreadyGuessed(wordToGuess);
             // show winner scene
+
+            BorderPane panel = new BorderPane();
+            Label win = new Label("Congrats you won !!!\n\n" +
+                    "  ___________\n" +
+                    "'._==_==_=_.'\n" +
+                    "   .-\\:      /-.\n" +
+                    "   | (|:.     |) |\n" +
+                    "   '-|:.     |-'\n" +
+                    "     \\::.    /\n" +
+                    "       '::. .'\n" +
+                    "         ) (\n" +
+                    "       _.' '._\n" +
+                    "     `\"\"\"\"\"\"\"` ");
             // close game
-            System.exit(0);
+            Button exitGameButton = new Button("Quit Game!");
+            exitGameButton.setAlignment(Pos.CENTER);
+            exitGameButton.setOnAction(new EventHandler<ActionEvent>() {
+
+                @Override
+                public void handle(ActionEvent event) {
+                    System.exit(0);
+                }
+            });
+
+            panel.setCenter(win);
+            panel.setBottom(exitGameButton);
+            Scene winnerScene = new Scene(panel,400,400);
+            Stage winStage = new Stage();
+            sceneChanger.setNewScene(winStage,winnerScene);
+
         }
         if(numberOfErrors == 7) {
             System.out.println("You lost");

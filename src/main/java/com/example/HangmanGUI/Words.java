@@ -3,7 +3,7 @@ package com.example.HangmanGUI;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Words {
-   static String[] wordsArray = {"Xylophon","stronghold","yachtsman","espionage","exodus","fishhook","fluffiness","kilobyte","President","Carnival","Football","Spiderman","nightclub","puzzling","schnapps","thumbscrew","transgress","jiujitsu","wyvern","curacao"};
+    static String[] wordsArray = {"Xylophon","stronghold","yachtsman","espionage","exodus","fishhook","fluffiness","kilobyte","President","Carnival","Football","Spiderman","nightclub","puzzling","schnapps","thumbscrew","transgress","jiujitsu","wyvern","curacao"};
 
 
     public static String getRandomWord() {
@@ -21,5 +21,11 @@ public class Words {
         }
         return underscoredWord;
     }
-
+    public static String getAlreadyGuessed(String searchWord) {
+        String alreadyGuessed = "";
+        for (int i = 0; i < searchWord.length(); i++) {
+            alreadyGuessed = alreadyGuessed + "_";
+        }
+        return alreadyGuessed;
+    }
 }

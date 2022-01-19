@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
-import javafx.stage.Modality;
+
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -53,10 +53,10 @@ public class Main extends Application {
 
             @Override
             public void handle(ActionEvent event) {
-                //primaryStage.setScene(HangmanGameLayout.drawHangmanGameScene());
+                Stage gameStage = new Stage();
+                gameStage.setScene(HangmanGameLayout.drawHangmanGameScene(gameStage));
 
-                primaryStage.setResizable(false);
-                primaryStage.show();
+
             }
         });
 

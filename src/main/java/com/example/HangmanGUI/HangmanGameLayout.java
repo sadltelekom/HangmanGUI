@@ -1,6 +1,5 @@
 package com.example.HangmanGUI;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -9,18 +8,33 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class HangmanGameLayout {
     public static int numberOfErrors = 0;
     static String wordToGuess = Words.getRandomWord();
-    public static String alreadyGuessed;
+    public static String alreadyGuessed = Words.getAlreadyGuessed(wordToGuess);
+    public static Stage gameStage;
 
-    public static Scene drawHangmanGameScene() {
-        for (int i = 0; i < wordToGuess.length(); i++) {
-            alreadyGuessed = alreadyGuessed + "_";
+    public static Scene drawHangmanGameScene(Stage newStage) {
+        if (alreadyGuessed.toUpperCase().equals(wordToGuess.toUpperCase())){
+            System.out.println("You won");
+            wordToGuess = Words.getRandomWord();
+            alreadyGuessed = Words.getAlreadyGuessed(wordToGuess);
+            // show winner scene
+            // close game
+            System.exit(0);
         }
+        if(numberOfErrors == 7) {
+            System.out.println("You lost");
+            // show winner scene
+            // close game
+            System.exit(0);
+        }
+
+        gameStage = newStage;
+        gameStage.setResizable(false);
+        gameStage.show();
         System.out.println(wordToGuess);
         BorderPane panel = new BorderPane();
 
@@ -33,10 +47,10 @@ public class HangmanGameLayout {
 
 
 
-        Label solvingWord = new Label(Words.drawGuessingDashes(wordToGuess));
+        Label solvingWord = new Label(alreadyGuessed);
         solvingWord.setPadding(new Insets(100, 100, 100, 250));
 
-        Label hangmanStatus = new Label(HangmanGame.drawHangman(0));
+        Label hangmanStatus = new Label(HangmanGame.drawHangman(numberOfErrors));
         hangmanStatus.setPadding(new Insets(100, 250, 100, 100));
 
         Button buttonA = new Button("A");
@@ -89,6 +103,8 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "A");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+
             }
 
         });
@@ -105,6 +121,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "B");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
         });
         buttonC.setOnAction(new EventHandler<ActionEvent>() {
@@ -120,6 +137,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "C");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
         });
         buttonD.setOnAction(new EventHandler<ActionEvent>() {
@@ -135,6 +153,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "D");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
         });
         buttonE.setOnAction(new EventHandler<ActionEvent>() {
@@ -150,6 +169,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "E");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
         });
         buttonF.setOnAction(new EventHandler<ActionEvent>() {
@@ -165,6 +185,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "F");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
         });
         buttonG.setOnAction(new EventHandler<ActionEvent>() {
@@ -180,6 +201,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "G");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -196,6 +218,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "H");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -212,6 +235,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "I");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -228,6 +252,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "J");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -244,6 +269,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "K");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -260,6 +286,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "L");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -276,6 +303,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "M");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -292,6 +320,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "N");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -308,6 +337,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "O");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -324,8 +354,8 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "P");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
-
         });
         buttonQ.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -340,6 +370,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "Q");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -356,6 +387,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "R");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -363,7 +395,7 @@ public class HangmanGameLayout {
 
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("User Pressed R");
+                System.out.println("User Pressed S");
 
                 if (wordToGuess.toUpperCase().contains("S")) {
                     replaceAlreadyGuessedLetters("S");
@@ -372,6 +404,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "S");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -388,11 +421,114 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "T");
                     numberOfErrors++;
                 }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+            }
+
+        });
+        buttonU.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("User Pressed U");
+
+                if (wordToGuess.toUpperCase().contains("U")) {
+                    replaceAlreadyGuessedLetters("U");
+
+                } else {
+                    System.out.printf("%s not correct try again\n", "U");
+                    numberOfErrors++;
+                }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+            }
+
+        });
+        buttonV.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("User Pressed V");
+
+                if (wordToGuess.toUpperCase().contains("V")) {
+                    replaceAlreadyGuessedLetters("V");
+
+                } else {
+                    System.out.printf("%s not correct try again\n", "V");
+                    numberOfErrors++;
+                }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+            }
+
+        });
+        buttonW.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("User Pressed W");
+
+                if (wordToGuess.toUpperCase().contains("W")) {
+                    replaceAlreadyGuessedLetters("W");
+
+                } else {
+                    System.out.printf("%s not correct try again\n", "W");
+                    numberOfErrors++;
+                }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+            }
+
+        });
+        buttonX.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("User Pressed X");
+
+                if (wordToGuess.toUpperCase().contains("X")) {
+                    replaceAlreadyGuessedLetters("X");
+
+                } else {
+                    System.out.printf("%s not correct try again\n", "X");
+                    numberOfErrors++;
+                }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+            }
+
+        });
+        buttonY.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("User Pressed Y");
+
+                if (wordToGuess.toUpperCase().contains("Y")) {
+                    replaceAlreadyGuessedLetters("Y");
+
+                } else {
+                    System.out.printf("%s not correct try again\n", "Y");
+                    numberOfErrors++;
+                }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+            }
+
+        });
+        buttonZ.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("User Pressed Z");
+
+                if (wordToGuess.toUpperCase().contains("Z")) {
+                    replaceAlreadyGuessedLetters("Z");
+
+                } else {
+                    System.out.printf("%s not correct try again\n", "Z");
+                    numberOfErrors++;
+                }
+                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
 
-        System.out.println("Play Button pressed.");
+
         // put scene into this stage.
         Scene newScene = new Scene(panel,900,400);
 
@@ -421,5 +557,6 @@ public class HangmanGameLayout {
 
 
     }
+
 
 }

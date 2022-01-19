@@ -3,7 +3,12 @@ package com.example.HangmanGUI;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Words {
-    static String[] wordsArray = {"Xylophon","stronghold","yachtsman","espionage","exodus","fishhook","fluffiness","kilobyte","President","Carnival","Football","Spiderman","nightclub","puzzling","schnapps","thumbscrew","transgress","jiujitsu","wyvern","curacao"};
+    static String[] wordsArray = {"Xylophon","onyx","haphazard","puppy","kayak","jumbo","juicy","cycle","matrix","luxury","lucky","pneumonia","gazebo","galvanize","galaxy","avenue",
+            "absurd","abyss","awkward","bandwagon","beekeeper","staff","stretch","gossip","scratch","icebox","blizzard","bookworm",
+            "buffalo","buzzwords","buzzing","cobweb","keyhole","daiquiri","duplex","joyful","equip","dwarves","jigsaw","jawbreaker",
+            "jackpot","injury","grogginess","stronghold","yachtsman","espionage","exodus","fishhook","fluffiness","kilobyte","oxidize","peekaboo","President","Carnival","oxygen",
+            "Football","unknown","transplant","unworthy","vaporize","quizzes","whiskey","vodka","walkway","wave","witchcraft","wristwatch","zodiac","youthful","zigzagging","rhythm",
+            "subway","quorum","nowadays","Spiderman","strength","lengths","transcript","syndrome","megahertz","microwave","nightclub","puzzling","schnapps","thumbscrew","transgress","jiujitsu","wyvern","curacao"};
 
 
     public static String getRandomWord() {

@@ -57,9 +57,7 @@ public class HangmanGameLayout {
         }
         if(numberOfErrors == 7) {
             System.out.println("You lost");
-            wordToGuess = Words.getRandomWord();
-            alreadyGuessed = Words.getAlreadyGuessed(wordToGuess);
-            numberOfErrors = 0;
+
             BorderPane panel = new BorderPane();
             Label lost = new Label("Sorry you lost \n\n"
                     + HangmanGame.drawHangman(7) +"\n" + "Word was " + wordToGuess);
@@ -73,6 +71,10 @@ public class HangmanGameLayout {
                     System.exit(0);
                 }
             });
+
+            wordToGuess = Words.getRandomWord();
+            alreadyGuessed = Words.getAlreadyGuessed(wordToGuess);
+            numberOfErrors = 0;
 
             panel.setCenter(lost);
             panel.setBottom(exitGameButton);

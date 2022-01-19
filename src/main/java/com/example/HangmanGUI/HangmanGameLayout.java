@@ -67,7 +67,7 @@ public class HangmanGameLayout {
             System.out.println("You lost");
 
             BorderPane panel = new BorderPane();
-            Label lost = new Label("Try again!");
+            Label lost = new Label("No! It was " + wordToGuess);
             //Sourcing the image for the cup
             FileInputStream inputstream = null;
             try {
@@ -79,7 +79,7 @@ public class HangmanGameLayout {
             Image img = new Image(inputstream);
             ImageView view = new ImageView(img);
             //fixing the size of the picture relative to the size of the program window
-            view.setFitHeight(150);
+            view.setFitHeight(125);
             view.setPreserveRatio(true);
             lost.setGraphic(view);
 

@@ -53,6 +53,7 @@ public class HangmanGameLayout {
             Scene winnerScene = new Scene(panel,400,400);
             Stage winStage = new Stage();
             winStage.setTitle("Winner");
+            winStage.setAlwaysOnTop(true);
             sceneChanger.setNewScene(winStage,winnerScene);
 
         }
@@ -82,6 +83,7 @@ public class HangmanGameLayout {
             Scene winnerScene = new Scene(panel,400,400);
             Stage lossStage = new Stage();
             lossStage.setTitle("Looser");
+            lossStage.setAlwaysOnTop(true);
             sceneChanger.setNewScene(lossStage,winnerScene);
 
         }

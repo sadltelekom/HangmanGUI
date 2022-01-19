@@ -1,5 +1,10 @@
 package com.example.HangmanGUI;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class HangmanGame {
@@ -78,7 +83,7 @@ public class HangmanGame {
     }
 
     public static String drawHangman(int numberOfErrors) {
-        String Gallows ="";
+        String Gallows = "";
         if (numberOfErrors == 0) {
             Gallows = "_____ \n" + "|    \n" + "|    \n" + "|       \n" + "|    \n" + "|      \n" + "________\n";
         } else if (numberOfErrors == 1) {

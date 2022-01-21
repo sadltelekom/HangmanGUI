@@ -62,7 +62,7 @@ public class HangmanGameLayout {
             Stage winStage = new Stage();
             winStage.setTitle("Winner");
             winStage.setAlwaysOnTop(true);
-            sceneChanger.setNewScene(winStage,winnerScene);
+            SceneChanger.setNewScene(winStage,winnerScene);
 
         }
         if(numberOfErrors == 7) {
@@ -106,7 +106,7 @@ public class HangmanGameLayout {
             Stage lossStage = new Stage();
             lossStage.setTitle("Looser");
             lossStage.setAlwaysOnTop(true);
-            sceneChanger.setNewScene(lossStage,winnerScene);
+            SceneChanger.setNewScene(lossStage,winnerScene);
 
         }
 
@@ -181,7 +181,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "A");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
 
             }
 
@@ -199,7 +199,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "B");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
         });
         buttonC.setOnAction(new EventHandler<ActionEvent>() {
@@ -215,7 +215,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "C");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
         });
         buttonD.setOnAction(new EventHandler<ActionEvent>() {
@@ -231,7 +231,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "D");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
         });
         buttonE.setOnAction(new EventHandler<ActionEvent>() {
@@ -247,7 +247,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "E");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
         });
         buttonF.setOnAction(new EventHandler<ActionEvent>() {
@@ -263,7 +263,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "F");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
         });
         buttonG.setOnAction(new EventHandler<ActionEvent>() {
@@ -279,7 +279,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "G");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -296,7 +296,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "H");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -313,7 +313,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "I");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -330,7 +330,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "J");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -347,7 +347,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "K");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -364,7 +364,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "L");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -381,7 +381,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "M");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -398,7 +398,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "N");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -415,7 +415,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "O");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -432,7 +432,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "P");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
         });
         buttonQ.setOnAction(new EventHandler<ActionEvent>() {
@@ -448,7 +448,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "Q");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -465,7 +465,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "R");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -482,7 +482,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "S");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -499,7 +499,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "T");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -516,7 +516,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "U");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -533,7 +533,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "V");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -550,7 +550,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "W");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -567,7 +567,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "X");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -584,7 +584,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "Y");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
@@ -601,7 +601,7 @@ public class HangmanGameLayout {
                     System.out.printf("%s not correct try again\n", "Z");
                     numberOfErrors++;
                 }
-                sceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
+                SceneChanger.setNewScene(gameStage,drawHangmanGameScene(gameStage));
             }
 
         });
